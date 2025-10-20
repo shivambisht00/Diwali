@@ -672,7 +672,7 @@ audio {
     color: var(--color-white);
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: clamp(0.6rem, 1.2vw, 0.85rem);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     transform-origin: 0 55px;
@@ -859,11 +859,12 @@ audio {
     display: none;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .letter__border {
     position: relative;
-    width: 90%;
+    width: 100%;
     max-width: 900px;
     max-height: 90vh;
     background: linear-gradient(135deg, #fff8e7, #ffeaa7);
@@ -916,6 +917,9 @@ audio {
     color: #2d1b4e;
     overflow-y: auto;
     max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .title__letter {
@@ -930,21 +934,25 @@ audio {
 
 .content__letter {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 30px;
-    align-items: flex-start;
-}
-
-.content__letter .left {
-    flex: 1;
-    padding-right: 20px;
-    border-right: 3px dashed var(--color-gold);
+    width: 100%;
 }
 
 .content__letter .right {
-    flex: 0 0 300px;
+    order: 1;
+    width: 100%;
+    max-width: 400px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+}
+
+.content__letter .left {
+    order: 2;
+    width: 100%;
+    max-width: 600px;
 }
 
 .text__letter {
@@ -952,7 +960,7 @@ audio {
     font-size: clamp(1rem, 2vw, 1.25rem);
     line-height: 1.8;
     color: #2d1b4e;
-    text-align: justify;
+    text-align: center;
 }
 
 .text__letter p {
@@ -963,6 +971,9 @@ audio {
     opacity: 0;
     transform: scale(0.3) rotate(-15deg);
     transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .fireworks__img.animationOp {
@@ -972,6 +983,7 @@ audio {
 
 .fireworks__img video {
     width: 100%;
+    max-width: 350px;
     height: auto;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -1255,6 +1267,16 @@ audio {
     .music-control {
         right: 20px;
     }
+
+    .text__circle {
+        width: 110px;
+        height: 110px;
+    }
+
+    .text__circle span {
+        font-size: 0.7rem;
+        transform-origin: 0 45px;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -1388,25 +1410,51 @@ audio {
     }
 
     .text__circle {
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
     }
 
     .text__circle span {
-        font-size: 0.7rem;
+        font-size: 0.5rem;
+        transform-origin: 0 25px;
+        top: 6px;
     }
 
-    .interactive-diya {
+    .circle .center_diya {
+        width: 25px;
+    }
+
+    .letter__border {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .letter {
+        padding: 15px 10px;
+    }
+
+    .content__letter {
+        gap: 15px;
+    }
+
+    .fireworks__img video {
+        max-width: 250px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .text__circle {
         width: 60px;
         height: 60px;
     }
 
-    .gallery-container {
-        padding: 1rem;
+    .text__circle span {
+        font-size: 0.4rem;
+        transform-origin: 0 20px;
+        top: 5px;
     }
 
-    .gallery-thumbnail {
-        width: 60px;
-        height: 60px;
+    .circle .center_diya {
+        width: 20px;
     }
 }
