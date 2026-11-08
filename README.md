@@ -1,4 +1,4 @@
-# ✨ Happy Diwali 2025 - Festival of Lights ✨
+# ✨ Happy Diwali - Festival of Lights ✨
 
 A beautiful, animated single-page Diwali blessing website featuring vibrant colors, smooth animations, and interactive elements to celebrate the Festival of Lights.
 
@@ -261,4 +261,4 @@ Created with ❤️ by Shivam Bisht for Diwali 2025
 
 May the festival of lights illuminate your life with endless joy, prosperity, and happiness!
 
-**शुभ दीपावली 2025! 🙏**
+**शुभ दीपावली ! 🙏**
