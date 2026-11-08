@@ -1,5 +1,5 @@
 /* ==================== IMPORTS ==================== */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600;700&display=swap');
+
 
 /* ==================== VARIABLES ==================== */
 :root {
@@ -1457,4 +1457,115 @@ audio {
     .circle .center_diya {
         width: 20px;
     }
+}
+
+
+
+
+ /* =====================================================
+   FIXES + LAXMI MAA  (isse css/style.css ke bilkul END mein paste karo)
+   ===================================================== */
+
+/* ---- Double scrollbar fix ---- */
+html { height: auto; overflow-x: hidden; }
+body { height: auto; min-height: 100%; overflow-y: visible; }
+
+/* ---- Garland: right side flip animation mein bhi rahe ---- */
+.decoration__garlands img { max-width: 45vw; height: auto; }
+
+.garland__right {
+    transform: rotate(10deg) translate(20px, -20px) scaleX(-1);
+    animation: garlandSwingR 4s 0.5s infinite ease-in-out;
+}
+
+@keyframes garlandSwingR {
+    0%, 100% { transform: rotate(10deg) translate(20px, -20px) scaleX(-1); }
+    50%      { transform: rotate(5deg) translate(15px, -15px) scaleX(-1); }
+}
+
+/* ---- Centering fix (animation transform ko override karta tha) ---- */
+.main_diya {
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: fit-content;
+    transform: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .circle {
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        width: fit-content;
+        transform: none;
+        top: auto;
+        bottom: -70px;
+    }
+}
+
+/* ---- Blessing popup: ab sahi center hoga (JS addClass("open") use karta hai) ---- */
+.box__letter {
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.box__letter.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ---- Maa Laxmi section ---- */
+.laxmi-section {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.laxmi-card {
+    display: inline-block;
+    padding: 2rem;
+    border: 3px solid var(--color-gold);
+    border-radius: 30px;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(157, 78, 221, 0.2));
+    box-shadow: 0 0 50px var(--color-shadow);
+}
+
+.laxmi-img {
+    width: min(320px, 70vw);
+    border-radius: 50%;
+    border: 6px solid var(--color-gold);
+    animation: imageGlow 3s infinite ease-in-out;
+}
+
+.laxmi-fallback {
+    display: none;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    font-size: 6rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 6px solid var(--color-gold);
+    animation: imageGlow 3s infinite ease-in-out;
+}
+
+.laxmi-mantra {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    color: var(--color-gold);
+    margin: 1.5rem 0 1rem;
+    text-shadow: 0 0 15px var(--color-orange);
+}
+
+.laxmi-shloka {
+    line-height: 1.9;
+    color: var(--color-text-light);
+    font-size: clamp(1rem, 2vw, 1.2rem);
 }
